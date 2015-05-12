@@ -13,5 +13,5 @@ Documentation is available at [http://synapsepay.readme.io/v1.0/docs/](http://sy
 
 ## Samples
 
-See the [samples](https://github.com/synapsepayments/synapse_pay-php/tree/master/samples) folder for samples using the library. Samples are available using callbacks and promises.
+See the [samples](https://github.com/synapsepayments/synapse_pay-php/tree/master/samples) folder for samples using the library.
 
