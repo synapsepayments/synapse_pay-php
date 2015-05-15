@@ -4,23 +4,23 @@ namespace SynapsePay;
 
 class User extends ApiResource {
 
+  public $accept_bank_payments;
   public $accept_gratuity;
   public $avatar;
+  public $balance;
   public $email;
   public $fullname;
-  public $phone_number;
-  public $visit_message;
-  public $accept_bank_payments;
-  public $balance;
-  public $promo_text;
-  public $seller_details;
-  public $user_id;
   public $has_avatar;
   public $is_trusted;
+  public $phone_number;
+  public $promo_text;
   public $referral_code;
   public $resource_uri;
+  public $seller_details;
+  public $user_id;
   public $username;
   public $visit_count;
+  public $visit_message;
 
   public function create( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/user/create", $params, $headers, $this );

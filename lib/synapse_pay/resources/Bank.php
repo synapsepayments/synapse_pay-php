@@ -4,20 +4,20 @@ namespace SynapsePay;
 
 class Bank extends ApiResource {
 
-  public $name_on_account;
-  public $resource_uri;
-  public $id;
-  public $is_active;
-  public $is_seller_default;
-  public $nickname;
   public $account_class;
   public $account_number_string;
-  public $is_buyer_default;
   public $account_type;
-  public $routing_number_string;
   public $bank_name;
   public $date;
+  public $id;
+  public $is_active;
+  public $is_buyer_default;
+  public $is_seller_default;
   public $is_verified;
+  public $name_on_account;
+  public $nickname;
+  public $resource_uri;
+  public $routing_number_string;
 
   function remove( $params=[], $headers=[] ) {
     $params = ParamsBuilde::merge([

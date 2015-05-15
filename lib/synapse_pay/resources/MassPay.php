@@ -4,14 +4,14 @@ namespace SynapsePay;
 
 class MassPay extends ApiResource {
 
-  public $date;
-  public $id;
-  public $name_on_account;
-  public $routing_number_string;
   public $account_number_string;
   public $amount;
+  public $date;
   public $fee;
+  public $id;
+  public $name_on_account;
   public $resource_uri;
+  public $routing_number_string;
   public $status;
   public $trans_type;
 
