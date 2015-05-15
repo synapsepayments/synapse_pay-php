@@ -4,16 +4,16 @@ namespace SynapsePay;
 
 class MassPay extends ApiResource {
 
-  public $resource_uri;
   public $account_number_string;
+  public $amount;
+  public $date;
   public $fee;
+  public $id;
   public $name_on_account;
+  public $resource_uri;
   public $routing_number_string;
   public $status;
   public $trans_type;
-  public $amount;
-  public $date;
-  public $id;
 
   function cancel( $params=[], $headers=[] ) {
     $params = ParamsBuilde::merge([

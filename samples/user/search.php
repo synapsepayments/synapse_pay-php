@@ -10,5 +10,5 @@ $client = \SynapsePay\User::login( "3ac38d63db58466982fe6f871c48f1", "TestTest12
 
 // Search for users
 
-$users = $client->users->search("test");
+$users = $client->user->search("test");
 var_dump($users);

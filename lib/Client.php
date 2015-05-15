@@ -38,13 +38,16 @@ class Client extends ApiClient {
 
     $this->user = new UserEndpoint($this);
     $this->banks = new BankEndpoint($this);
-    $this->orders = new OrderEndpoint($this);
-    $this->deposits = new DepositEndpoint($this);
-    $this->withdrawals = new WithdrawalEndpoint($this);
-    $this->cards = new CardEndpoint($this);
-    $this->massPays = new MassPayEndpoint($this);
+    $this->bankMfaDevices = new BankMfaDeviceEndpoint($this);
+    $this->bankMfaQuestions = new BankMfaQuestionsEndpoint($this);
     $this->bankStatuses = new BankStatusEndpoint($this);
+    $this->cards = new CardEndpoint($this);
+    $this->deposits = new DepositEndpoint($this);
+    $this->massPays = new MassPayEndpoint($this);
+    $this->orders = new OrderEndpoint($this);
     $this->wires = new WireEndpoint($this);
+    $this->withdrawals = new WithdrawalEndpoint($this);
+
 
     return parent::refreshFrom( [], [
         "oauth_consumer_key" => $this->oauthConsumerKey

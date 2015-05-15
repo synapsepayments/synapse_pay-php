@@ -12,7 +12,7 @@ class OrderEndpoint extends APIEndpoint {
 
   function poll( $orderId, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([
-      "order_id" => $order_id,
+      "order_id" => $orderId,
     ], $params);
     $method = new ApiMethod( ":post", "/order/poll", $params, $headers, $this );
     $json = $this->client->execute($method);
@@ -27,7 +27,7 @@ class OrderEndpoint extends APIEndpoint {
 
   function update( $orderId, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([
-      "order_id" => $order_id,
+      "order_id" => $orderId,
     ], $params);
     $method = new ApiMethod( ":post", "/order/update", $params, $headers, $this );
     $json = $this->client->execute($method);
@@ -36,7 +36,7 @@ class OrderEndpoint extends APIEndpoint {
 
   function void( $orderId, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([
-      "order_id" => $order_id,
+      "order_id" => $orderId,
     ], $params);
     $method = new ApiMethod( ":post", "/order/void", $params, $headers, $this );
     $json = $this->client->execute($method);

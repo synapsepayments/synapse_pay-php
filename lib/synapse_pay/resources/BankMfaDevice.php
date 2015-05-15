@@ -4,11 +4,11 @@ namespace SynapsePay;
 
 class BankMfaDevice extends ApiResource {
 
-  public $type;
   public $access_token;
   public $cookies;
   public $form_extra;
   public $mfa;
+  public $type;
 
   function answer( $bank, $mfa, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([

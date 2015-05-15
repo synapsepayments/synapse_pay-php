@@ -4,6 +4,7 @@ namespace SynapsePay;
 
 class Deposit extends ApiResource {
 
+  public $amount;
   public $bank;
   public $date_created;
   public $id;
@@ -11,6 +12,5 @@ class Deposit extends ApiResource {
   public $status;
   public $status_url;
   public $user_id;
-  public $amount;
 
 }

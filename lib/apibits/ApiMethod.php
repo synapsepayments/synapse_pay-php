@@ -37,11 +37,6 @@ class ApiMethod {
         $this->responseBody = $e->getMessage();
         $this->responseCode = $e->getCode();
         throw new ApiError( $this->responseBody, $this->method, $this->responseCode );
-        // echo 'Error in execute';
-        // $this->responseBody = e.http_body if e.respond_to?(:http_body)
-        // $this->responseCode = e.http_code if e.respond_to?(:http_code)
-        //@error = compose_error(e)
-        //raise @error
       }
 
       if ($this->responseCode < 200 || $this->responseCode >= 300) {
@@ -74,20 +69,28 @@ class ApiMethod {
     return $json;
   }
 
-    public function composeError() {
-      return $this->errorWithResponse();
-    }
+  public function composeError() {
+    return $this->errorWithResponse();
+  }
 
-    # Handle a few common cases.
-    public function errorWithResponse() {
-      if ( $this->responseCode == 400 || $this->responseCode == 404 ) {
-        return new ApiError( "Invalid request. Please check the URL and parameters.", $this );
-      } else if ( $this->responseCode == 401 ) {
-        return new AuthenticationError( "Authentication failed.", $this );
-      } else {
-        return new ApiError( "An error occured while making the API call.", $this );
-      }
+  # Handle a few common cases.
+  public function errorWithResponse() {
+    if ( $this->responseCode == 400 || $this->responseCode == 404 ) {
+      return new ApiError( $this->errorMessage("Invalid request. Please check the URL and parameters."), $this );
+    } else if ( $this->responseCode == 401 ) {
+      return new AuthenticationError( $this->errorMessage("Authentication failed."), $this );
+    } else {
+      return new ApiError( $this->errorMessage("An error occured while making the API call."), $this );
     }
+  }
+
+  public function errorMessage( $msg ) {
+    if ( $this->responseBody == null ) {
+      return $msg;
+    } else {
+      return $this->responseBody;
+    }
+  }
 
 
   // public static function composeArguments($method_opts, $arguments) {

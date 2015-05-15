@@ -8,5 +8,5 @@ require(dirname(__FILE__) . '/../../init.php');
 
 $client = \SynapsePay\User::login( "3ac38d63db58466982fe6f871c48f1", "TestTest123$" );
 
-$user = $client->users->retrieve();
+$user = $client->user->retrieve();
 var_dump($user);
