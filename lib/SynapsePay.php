@@ -6,7 +6,7 @@ class SynapsePay
 {
 
     // @var string The base URL for the SynapsePay API.
-    public static $apiBase = "https://synapsepay.com/api/v2/";
+    public static $apiBase = "https://synapsepay.com/api/v2";
 
     // @var string The staging URL for the SynapsePay API.
     public static $apiStaging = "https://sandbox.synapsepay.com/api/v2";
@@ -27,7 +27,7 @@ class SynapsePay
     public static $clientSecret = null;
 
 
-    const VERSION = '0.0.1';
+    const VERSION = '0.0.2';
 
     /**
      * @return string The API version used for requests. null if we're using the

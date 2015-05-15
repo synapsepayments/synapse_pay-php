@@ -4,15 +4,15 @@ namespace SynapsePay;
 
 class Withdrawal extends ApiResource {
 
-  public $fee;
+  public $date_created;
+  public $instant_credit;
   public $resource_uri;
   public $status;
-  public $status_url;
   public $user_id;
-  public $date_created;
-  public $bank;
-  public $id;
-  public $instant_credit;
   public $amount;
+  public $fee;
+  public $id;
+  public $status_url;
+  public $bank;
 
 }

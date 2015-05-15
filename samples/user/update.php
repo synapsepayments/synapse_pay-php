@@ -8,7 +8,7 @@ require(dirname(__FILE__) . '/../../init.php');
 
 $client = \SynapsePay\User::login( "3ac38d63db58466982fe6f871c48f1", "TestTest123$" );
 
-$user = $client->users->update([
+$user = $client->user->update([
   "fullname" => "George Washington",
   "secret_note" => "Some secret info.",
 ]);

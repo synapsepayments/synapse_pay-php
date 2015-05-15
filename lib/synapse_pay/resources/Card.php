@@ -4,13 +4,13 @@ namespace SynapsePay;
 
 class Card extends ApiResource {
 
-  public $routing_number_string;
-  public $account_class;
   public $account_number_string;
   public $account_type;
   public $id;
   public $name_on_account;
   public $resource_uri;
+  public $routing_number_string;
+  public $account_class;
 
   function update( $params=[], $headers=[] ) {
     $params = ParamsBuilde::merge([

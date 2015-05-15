@@ -18,25 +18,26 @@ class ApiList extends ApiResource {
     }
 
     if(isset($this)) {
-      $this->klass = $klass;
-      $this->refreshFrom($json, $apiMethod, $client);
+      $this->refreshFrom($klass, $json, $apiMethod, $client);
       return $this;
     } else {
       $ret = new static();
-      $ret->klass = $klass;
-      $ret->refreshFrom($json, $apiMethod, $client);
+      $ret->refreshFrom( $klass, $json, $apiMethod, $client);
       return $ret;
     }
   }
 
-  public function refreshFrom( $json, $apiMethod=null, $client ) {
+  public function refreshFrom( $klass, $json, $apiMethod=null, $client ) {
     $this->clearApiAttributes();
     $this->apiMethod = $apiMethod;
     $this->client = $client;
     $this->data = array();
     $this->json = $json;
+    $this->klass = $klass;
 
     if( !is_array($json) ) {
+      $json = array( "data" => $json );
+    } else if ( !array_key_exists('data', $json) ) {
       $json = array( "data" => $json );
     }
 
@@ -46,7 +47,8 @@ class ApiList extends ApiResource {
         if ( is_array( $v ) ) {
           $d = array();
           foreach ($v as $nk => $nv ) {
-            array_push( $d, new $this->$klass( $nv, $apiMethod, $client ) );
+            $klassWithNamespace =  '\SynapsePay\\' . $klass;
+            array_push( $d, new $klassWithNamespace( $nv, $apiMethod, $client ) );
           }
           $this->data = $d;
         }

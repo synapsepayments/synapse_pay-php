@@ -44,22 +44,4 @@ class PathBuilder {
       return $value;
     }
 
-
-  // public static function determineValue($match, $arguments, $params, $klass, $this) {
-  //   $value = null;
-
-  //   if(array_key_exists($match, $arguments)) {
-  //     $value = $arguments[$match];
-  //   } else if(array_key_exists($match, $params)) {
-  //     $value = $params[$match];
-  //   } else {
-  //     // Try to call the instance method, and then the klass method.
-  //     $value = self::tryInstanceThenClass($klass, $this, $match);
-  //   }
-
-  //   return $value;
-  // }
-
-
-
 }

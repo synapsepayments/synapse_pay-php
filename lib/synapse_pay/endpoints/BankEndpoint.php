@@ -30,7 +30,7 @@ class BankEndpoint extends APIEndpoint {
 
   function remove( $bankId, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([
-      "bank_id" => $bank_id,
+      "bank_id" => $bankId,
     ], $params);
     $method = new ApiMethod( ":post", "/bank/delete", $params, $headers, $this );
     $json = $this->client->execute($method);

@@ -4,24 +4,24 @@ namespace SynapsePay;
 
 class Order extends ApiResource {
 
-  public $status_url;
-  public $tip;
-  public $id;
-  public $seller;
-  public $fee;
-  public $resource_uri;
-  public $ticket_number;
-  public $total;
-  public $amount;
-  public $date;
-  public $supp_id;
+  public $facilitator_fee;
   public $is_buyer;
   public $note;
-  public $account_type;
-  public $discount;
-  public $status;
+  public $resource_uri;
+  public $date;
   public $date_settled;
-  public $facilitator_fee;
+  public $status_url;
+  public $tip;
+  public $discount;
+  public $supp_id;
+  public $seller;
+  public $status;
+  public $ticket_number;
+  public $total;
+  public $account_type;
+  public $amount;
+  public $fee;
+  public $id;
 
   function update( $params=[], $headers=[] ) {
     $params = ParamsBuilde::merge([

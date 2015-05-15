@@ -4,23 +4,23 @@ namespace SynapsePay;
 
 class User extends ApiResource {
 
-  public $email;
-  public $phone_number;
-  public $visit_count;
-  public $visit_message;
   public $accept_gratuity;
-  public $fullname;
-  public $is_trusted;
-  public $resource_uri;
   public $avatar;
-  public $has_avatar;
-  public $referral_code;
-  public $username;
+  public $email;
+  public $fullname;
+  public $phone_number;
+  public $visit_message;
   public $accept_bank_payments;
   public $balance;
   public $promo_text;
   public $seller_details;
   public $user_id;
+  public $has_avatar;
+  public $is_trusted;
+  public $referral_code;
+  public $resource_uri;
+  public $username;
+  public $visit_count;
 
   public function create( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/user/create", $params, $headers, $this );
@@ -40,7 +40,7 @@ class User extends ApiResource {
 
   public function refreshAccess( $refreshToken, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([
-      "refresh_token" => $refresh_token,
+      "refresh_token" => $refreshToken,
     ], $params);
     $method = new ApiMethod( ":post", "/user/refresh", $params, $headers, $this );
     $json = $method->execute();

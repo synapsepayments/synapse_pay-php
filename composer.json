@@ -1,0 +1,24 @@
+{
+    "name": "synapse_pay/synapse_pay",
+    "type": "library",
+    "description": "SynapsePay allows you to integrate bank payments into your applications",
+    "keywords": ["synapse_pay", "api", "apibits"],
+    "homepage": "https://synapsepay.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Apibits.com",
+            "email": "libraries@apibits.com",
+            "homepage": "http://apibits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+      "php": ">=5.3.3",
+      "ext-curl": "*",
+      "ext-json": "*"
+    },
+    "require-dev": {
+      "phpunit/phpunit": "~4.0"
+    }
+}
