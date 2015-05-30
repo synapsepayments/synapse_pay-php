@@ -12,7 +12,7 @@ class BankMfaDeviceEndpoint extends APIEndpoint {
     ], $params);
     $method = new ApiMethod( ":post", "/bank/mfa", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return new ApiList("Bank", $json["banks"], $method, $client);
+    return new ApiList("Bank", $json["banks"], $method, $this->client);
   }
 
 }

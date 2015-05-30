@@ -7,24 +7,24 @@ class BankEndpoint extends APIEndpoint {
   function add( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/bank/add", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return new Bank($json["bank"], $method, $client);
+    return new Bank($json["bank"], $method, $this->client);
   }
 
   function all( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/bank/show", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return new ApiList("Bank", $json["banks"], $method, $client);
+    return new ApiList("Bank", $json["banks"], $method, $this->client);
   }
 
   function link( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/bank/login", $params, $headers, $this );
     $json = $this->client->execute($method);
     if( $json["is_mfa"] && $json["response"]["type"] == "questions" ) {
-      return new BankMfaQuestions($json["response"], $method, $client);
+      return new BankMfaQuestions($json["response"], $method, $this->client);
     } else if( $json["is_mfa"] && $json["response"]["type"] == "device" ) {
-      return new BankMfaDevice($json["response"], $method, $client);
+      return new BankMfaDevice($json["response"], $method, $this->client);
     } else {
-      return new ApiList("Bank", $json["banks"], $method, $client);
+      return new ApiList("Bank", $json["banks"], $method, $this->client);
     }
   }
 
@@ -34,7 +34,7 @@ class BankEndpoint extends APIEndpoint {
     ], $params);
     $method = new ApiMethod( ":post", "/bank/refresh", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return new ApiList("Bank", $json["banks"], $method, $client);
+    return new ApiList("Bank", $json["banks"], $method, $this->client);
   }
 
   function remove( $bankId, $params=[], $headers=[] ) {

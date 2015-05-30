@@ -18,7 +18,7 @@ class Card extends ApiResource {
     ], $params);
     $method = new ApiMethod( ":post", "/card/edit", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return $this->refreshFrom($json["card"], method);
+    return $this->refreshFrom($json["card"], $method, $this->client);
   }
 
 }

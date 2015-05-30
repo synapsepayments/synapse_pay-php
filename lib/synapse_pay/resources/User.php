@@ -50,13 +50,13 @@ class User extends ApiResource {
   function refresh( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/user/show", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return $this->refreshFrom($json["user"], method);
+    return $this->refreshFrom($json["user"], $method, $this->client);
   }
 
   function update( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/user/edit", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return $this->refreshFrom($json["user"], method);
+    return $this->refreshFrom($json["user"], $method, $this->client);
   }
 
 }
