@@ -8,5 +8,7 @@ require(dirname(__FILE__) . '/../../init.php');
 
 $client = \SynapsePay\User::login( "3ac38d63db58466982fe6f871c48f1", "TestTest123$" );
 
-$banks = $client->banks->retrieve("2178");
+// Answer an MFA to finalize linking the bank.
+
+$banks = $client->bankMfaDevices->answer("access_token", "Bank of America", "test_answer");
 var_dump($banks);

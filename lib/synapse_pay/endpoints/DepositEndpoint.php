@@ -13,7 +13,7 @@ class DepositEndpoint extends APIEndpoint {
   function create( $params=[], $headers=[] ) {
     $method = new ApiMethod( ":post", "/deposit/add", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return new Deposit($json["deposits"], $method, $client);
+    return new Deposit($json["deposit"], $method, $client);
   }
 
   function micro( $params=[], $headers=[] ) {

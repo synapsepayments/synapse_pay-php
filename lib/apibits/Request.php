@@ -41,7 +41,6 @@ class Request
       } elseif ($method == 'put') {
           $opts[CURLOPT_CUSTOMREQUEST] = 'PUT';
           if (count($params) > 0) {
-              $encoded = self::encode($params);
               $opts[CURLOPT_POSTFIELDS] = self::encode($params, $headers);
           }
       } elseif ($method == 'delete') {
@@ -51,8 +50,7 @@ class Request
               $path = "$path?$encoded";
           }
       } else {
-          //throw new Error\Api("Unrecognized method $method");
-          echo "error";
+          throw new ApiError("Unrecognized Curl Method: '{$method}'");
       }
 
       foreach ($headers as $header => $value) {

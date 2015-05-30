@@ -28,6 +28,15 @@ class BankEndpoint extends APIEndpoint {
     }
   }
 
+  function refresh( $id, $params=[], $headers=[] ) {
+    $params = ParamsBuilder::merge([
+      "id" => $id,
+    ], $params);
+    $method = new ApiMethod( ":post", "/bank/refresh", $params, $headers, $this );
+    $json = $this->client->execute($method);
+    return new ApiList("Bank", $json["banks"], $method, $client);
+  }
+
   function remove( $bankId, $params=[], $headers=[] ) {
     $params = ParamsBuilder::merge([
       "bank_id" => $bankId,
@@ -35,15 +44,6 @@ class BankEndpoint extends APIEndpoint {
     $method = new ApiMethod( ":post", "/bank/delete", $params, $headers, $this );
     $json = $this->client->execute($method);
     return $json;
-  }
-
-  function retrieve( $id, $params=[], $headers=[] ) {
-    $params = ParamsBuilder::merge([
-      "id" => $id,
-    ], $params);
-    $method = new ApiMethod( ":post", "/bank/refresh", $params, $headers, $this );
-    $json = $this->client->execute($method);
-    return new ApiList("Bank", $json["banks"], $method, $client);
   }
 
 }
