@@ -21,7 +21,7 @@ class MassPay extends ApiResource {
     ], $params);
     $method = new ApiMethod( ":post", "/masspay/cancel", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return new ApiList("MassPay", $json["mass_pays"], $method, $client);
+    return new ApiList("MassPay", $json["mass_pays"], $method, $this->client);
   }
 
 }

@@ -18,7 +18,7 @@ class SynapsePay
     public static $supportEmail = "hello@synapsepay.com";
 
     // @var string|null The version of the SynapsePay API to use for requests.
-    public static $docsUrl = "http://synapsepay.readme.io/v1.0/docs";
+    public static $docsUrl = "http://api.synapsepay.com/v2.0";
 
     public static $apiSandbox = "https://sandbox.synapsepay.com/api/v2";
 
@@ -27,7 +27,7 @@ class SynapsePay
     public static $clientSecret = null;
 
 
-    const VERSION = '0.0.2';
+    const VERSION = '0.0.5';
 
     /**
      * @return string The API version used for requests. null if we're using the

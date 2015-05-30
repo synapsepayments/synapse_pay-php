@@ -8,15 +8,6 @@ class ApiResource {
   public $apiMethod;
   public $client;
 
-  // public function __toString() {
-  //   $ret = "";
-  //   foreach(static::$attributes as $key => $v) {
-  //     // echo "key=" . $key . " and value is " . $this->$key . " \n";
-  //     $ret .= $key . " => " . $this->$key . "\n";
-  //   }
-  //   return $ret;
-  // }
-
   public function __construct( $json=null, $apiMethod=null, $client=null ) {
 
     if(isset($this)) {

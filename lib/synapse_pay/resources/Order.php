@@ -29,7 +29,7 @@ class Order extends ApiResource {
     ], $params);
     $method = new ApiMethod( ":post", "/order/update", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return $this->refreshFrom($json["order"], method);
+    return $this->refreshFrom($json["order"], $method, $this->client);
   }
 
   function void( $params=[], $headers=[] ) {
@@ -38,7 +38,7 @@ class Order extends ApiResource {
     ], $params);
     $method = new ApiMethod( ":post", "/order/void", $params, $headers, $this );
     $json = $this->client->execute($method);
-    return $this->refreshFrom($json["order"], method);
+    return $this->refreshFrom($json["order"], $method, $this->client);
   }
 
 }

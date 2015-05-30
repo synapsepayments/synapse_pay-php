@@ -7,15 +7,18 @@ class Bank extends ApiResource {
   public $account_class;
   public $account_number_string;
   public $account_type;
+  public $address;
+  public $balance;
   public $bank_name;
   public $date;
+  public $email;
   public $id;
-  public $is_active;
   public $is_buyer_default;
   public $is_seller_default;
-  public $is_verified;
+  public $mfa_verifed;
   public $name_on_account;
   public $nickname;
+  public $phone_number;
   public $resource_uri;
   public $routing_number_string;
 
