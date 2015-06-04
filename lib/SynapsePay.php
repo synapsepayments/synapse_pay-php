@@ -27,7 +27,7 @@ class SynapsePay
     public static $clientSecret = null;
 
 
-    const VERSION = '0.0.5';
+    const VERSION = '0.0.6';
 
     /**
      * @return string The API version used for requests. null if we're using the

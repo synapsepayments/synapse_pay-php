@@ -6,6 +6,7 @@ class Client extends ApiClient {
 
   public $oauthConsumerKey;
   public $refreshToken;
+  public $expiresAt;
   public $expiresIn;
   public $username;
   public $userID;
@@ -32,6 +33,7 @@ class Client extends ApiClient {
     $this->json = $json;
     $this->oauthConsumerKey = $json["oauth_consumer_key"];
     $this->refreshToken = $json["refresh_token"];
+    $this->expiresAt = $json["expires_at"];
     $this->expiresIn = $json["expires_in"];
     $this->username = $json["username"];
     $this->userID = $json["user_id"];
